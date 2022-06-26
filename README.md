@@ -1,4 +1,4 @@
-# ffxiv-craft-simulator
+# FFXIV Craft Simulator in C#
 
 I am strating a Open Source FFXIV Craft Simulator in C# for increase power performance converting to C/C++
 
