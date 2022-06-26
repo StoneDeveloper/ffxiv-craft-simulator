@@ -36,32 +36,6 @@ Logger.prototype.log = function(myString) {
     }
 };
 
-function Crafter(cls, level, craftsmanship, control, craftPoints, specialist, actions) {
-    this.cls = cls;
-    this.craftsmanship = craftsmanship;
-    this.control = control;
-    this.craftPoints = craftPoints;
-    this.level = level;
-    this.specialist = specialist;
-    if (actions === null) {
-        this.actions = [];
-    }
-    else {
-        this.actions = actions;
-    }
-}
-
-function Recipe(baseLevel, level, difficulty, durability, startQuality, maxQuality, suggestedCraftsmanship, suggestedControl) {
-    this.baseLevel = baseLevel;
-    this.level = level;
-    this.difficulty = difficulty;
-    this.durability = durability;
-    this.startQuality = startQuality;
-    this.maxQuality = maxQuality;
-    this.suggestedCraftsmanship = suggestedCraftsmanship || SuggestedCraftsmanship[this.level];
-    this.suggestedControl = suggestedControl || SuggestedControl[this.level];
-}
-
 function isActionEq(action1, action2) {
     return action1.shortName === action2.shortName;
 }
