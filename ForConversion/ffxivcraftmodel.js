@@ -62,26 +62,6 @@ function Recipe(baseLevel, level, difficulty, durability, startQuality, maxQuali
     this.suggestedControl = suggestedControl || SuggestedControl[this.level];
 }
 
-/*
-function Synth(crafter, recipe, maxTrickUses, reliabilityIndex, useConditions, maxLength) {
-    this.crafter = crafter;
-    this.recipe = recipe;
-    this.maxTrickUses = maxTrickUses;
-    this.useConditions = useConditions;
-    this.reliabilityIndex = reliabilityIndex;
-    this.maxLength = maxLength;
-}
-
-Synth.prototype.calculateBaseProgressIncrease = function (levelDifference, craftsmanship) {
-    var levelDifferenceFactor = getLevelDifferenceFactor('craftsmanship', levelDifference);
-    return Math.floor((levelDifferenceFactor * (0.21 * craftsmanship + 2) * (10000 + craftsmanship)) / (10000 + this.recipe.suggestedCraftsmanship))
-};
-
-Synth.prototype.calculateBaseQualityIncrease = function (levelDifference, control) {
-    var levelDifferenceFactor = getLevelDifferenceFactor('control', levelDifference);
-    return Math.floor((levelDifferenceFactor * (0.35 * control + 35) * (10000 + control)) / (10000 + this.recipe.suggestedControl))
-};*/
-
 function isActionEq(action1, action2) {
     return action1.shortName === action2.shortName;
 }
@@ -2690,27 +2670,6 @@ var SuggestedControl = {
     519: 2540,
     520: 2540
 };
-
-var LevelDifferenceFactors = {
-    'craftsmanship': {
-
-    },
-    'control': {
-		
-    }
-};
-
-function getLevelDifferenceFactor(kind, levelDiff) {
-    if (levelDiff < -30) levelDiff = -30;
-    else if (levelDiff > 20) levelDiff = 20;
-
-    var factors = LevelDifferenceFactors[kind];
-    if (!factors) {
-        throw "unrecognized level difference factor kind";
-    }
-
-    return factors[levelDiff];
-}
 
 // Test objects
 //cls, level, craftsmanship, control, craftPoints, actions
